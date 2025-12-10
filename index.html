@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <!-- ロゴ(機能していないけどハンバーガーが安定するので放置) -->
+            <div id="logo"></div>
+
+            <!-- デスクトップ用ナビ -->
+            <nav id="desktop-nav" class="desktop-only" aria-label="Primary">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="category_3DCG.html">3DCG</a></li>
+                    <li><a href="category_animation.html">Animation</a></li>
+                    <li><a href="category_Programming.html">Programming</a></li>
+                    <li><a href="category_others.html">Others</a></li>
+                </ul>
+            </nav>
+            <!-- モバイル用ハンバーガー -->
+            <div id="menubar-mobile" class="mobile-only" aria-hidden="false">
+                <div class="nav">
+
+                    <!-- チェックボックス（視覚的には隠す） -->
+                    <input id="drawer_input" class="drawer_hidden" type="checkbox" aria-controls="mobile-menu"
+                        aria-label="Toggle menu" />
+                    <!-- ラベル（ハンバーガー） -->
+                    <label for="drawer_input" class="drawer_open" aria-hidden="true"><span></span></label>
+
+                    <!-- スライドメニュー本体 -->
+                    <nav id="mobile-menu" class="nav_content" aria-label="Mobile navigation">
+                        <ul class="nav_list">
+                            <li class="nav_item"><a href="index.html">Home</a></li>
+                            <li class="nav_item"><a href="category_3DCG.html">3DCG</a></li>
+                            <li class="nav_item"><a href="category_animation.html">Animation</a></li>
+                            <li class="nav_item"><a href="category_Programming.html">Programming</a></li>
+                            <li class="nav_item"><a href="category_others.html">Others</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- ヘッダーテキスト-->
+        <div id="header-catch" style="text-align:center; padding: 12px 0; color: var(--primary-color);">
+
+            <a href="index.html" target="_blank" rel="noopener noreferrer">
+                <h1 style="margin:0;">Daiki Eguchi's<br>Portfolio</h1>
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+        <div id="main-about">
+            <div id="main-about-text">
+                <h3>江口大輝</h3>
+                <p>帝京平成大学 人文社会学部 人間文化学科 <br>メディア文化コース 4年</p>
+            </div>
+        </div>
+
+        <!--Latest Works-->
+
+        <!--
+
+          <section id="main-latestwork" style="max-width:1200px;margin:0 auto 32px;padding:0 16px;">
+            <h2 style="text-align:center;color:var(--primary-color); background:var(--primary-bg); padding:12px;">Latest Works</h2>
+
+-->
+
+        <!--Latest Works内の画像、映像-->
+
+        <!--           
+
+            <div id="main-latestwork-images" style="display:flex; gap:12px; margin-top:12px;">
+              
+              <div class="main-latestwork">
+                <img src="./img/Q1NH500_1.jpg" alt="Q1NB500">
+                <p></p>
+                <div class="work-genre">3DCG</div>
+                <div class="work-title">Q1N-H</div>
+              </div>
+
+
+              <div class="main-latestwork">
+                <img src="./img/crane500.jpg" alt="Crane Game">
+                <p></p>
+                <div class="work-genre">3DCG</div>
+                <div class="work-title">Crane Game</div>
+              </div>
+
+              <div class="main-latestwork">
+                <img src="./img/gujing500_01.jpg" alt="仮">
+                <p></p>
+                <div class="work-genre">3DCG</div>
+                <div class="work-title">Gu-jing -グゥジン-</div>
+              </div>
+
+            </div>
+          </section>
+
+-->
+
+
+        <!--Works-->
+        <section id="Works" style="max-width:1200px;margin:0 auto 32px;padding:0 16px;">
+            <h2 style="text-align:center;color:var(--primary-color); background:var(--primary-bg); padding:12px;">Works
+            </h2>
+
+            <div id="main-image">
+                <div class="example2">
+                    <p>画像をクリックすると作品詳細ページにとびます</p>
+
+
+                    <!--Works内の画像、映像. 正方形にすると綺麗に並ぶ-->
+                    <!-- <a>で囲むとリンクにできる  # でページの部分を指定できる  画像１つ１つ<a>で囲まないとダメかも -->
+
+
+
+                    <a href="category_3DCG.html#Q1NH" target="" rel="">
+                        <div><img src="./img/Q1NH500_1.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_3DCG.html#cranegame" target="" rel="">
+                        <div><img src="./img/crane500.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_3DCG.html#gujing" target="" rel="">
+                        <div><img src="./img/gujing500_01.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_3DCG.html#nakanosan" target="" rel="">
+                        <div><img src="./img/nakanosan500.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_animation.html" target="" rel="">
+                        <div><img src="./img/CM500.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_3DCG.html#treasurebox" target="" rel="">
+                        <div><img src="./img/TreasureBox2.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_others.html#parade" target="" rel="">
+                        <div><img src="./img/parade2.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_others.html#yanagisouri" target="" rel="">
+                        <div><img src="./img/yanagisouri500.jpg" alt=""></div>
+                    </a>
+
+                    <a href="category_others.html#chuzou" target="" rel="">
+                        <div><img src="./img/chuzou4.jpg" alt=""></div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer-main" style="max-width:1100px;margin:0 auto; padding:8px 16px;">
+            <div id="footer-title">Daiki Eguchi's<br>Portfolio</div>
+        </div>
+        <div id="footer-sub" style="text-align:center; padding:8px 0; font-size:12px;">Copyright © 2025 Daiki Eguchi.
+            All Rights Reserved.</div>
+    </footer>
+</body>
+
+</html>
