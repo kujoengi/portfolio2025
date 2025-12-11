@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="category_mov_pro.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <!-- ロゴ(機能していないけどハンバーガーが安定するので放置) -->
+       <div id="logo"></div>
+
+       <!-- デスクトップ用ナビ -->
+        <nav id="desktop-nav" class="desktop-only" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category_3DCG.html">3DCG</a></li>
+            <li><a href="category_animation.html">Animation</a></li>
+            <li><a href="category_Programming.html">Programming</a></li>
+            <li><a href="category_others.html">Others</a></li>
+          </ul>
+        </nav>
+
+        <!-- モバイル用ハンバーガー -->
+         <div id="menubar-mobile" class="mobile-only" aria-hidden="false">
+          <div class="nav">
+            <!-- チェックボックス（視覚的には隠す） -->
+             <input id="drawer_input" class="drawer_hidden" type="checkbox" aria-controls="mobile-menu" aria-label="Toggle menu" />
+             <!-- ラベル（ハンバーガー） -->
+              <label for="drawer_input" class="drawer_open" aria-hidden="true"><span></span></label>
+
+              <!-- スライドメニュー本体 -->
+               <nav id="mobile-menu" class="nav_content" aria-label="Mobile navigation">
+                <ul class="nav_list">
+                  <li class="nav_item"><a href="index.html">Home</a></li>
+                  <li class="nav_item"><a href="category_3DCG.html">3DCG</a></li>
+                  <li class="nav_item"><a href="category_animation.html">Animation</a></li>
+                  <li class="nav_item"><a href="category_Programming.html">Programming</a></li>
+                  <li class="nav_item"><a href="category_others.html">Others</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+    <!-- ヘッダーテキスト（下段） -->
+    <div id="header-catch" style="text-align:center; padding: 12px 0; color: var(--primary-color);">
+
+      <a href="index.html" target="_blank" rel="noopener noreferrer">
+        <h1 style="margin:0;">Daiki Eguchi's<br>Portfolio</h1>
+      </a>
+      
+    </div>
+  </header>
+
+  <main>
+
+    <h2 style="text-align:center; margin-top:8px;">Programming Works</h2>
+
+    <div id="main-image">
+
+    <div id="">
+      <div class="example2">
+        <h3>Portfolio Website</h3>
+       <p>使用ツール：Visual Studio Code <br>制作年 2024年 2025年</p>
+        <p>このポートフォリオサイト。
+          <br>レスポンシブデザインを取り入れていて、PCでもスマートフォンでも快適に作品を見られるようにしている。
+          <br>サイトの入り口になる「Home」ではざっくりと自分についての説明と、ジャンル問わず作品を羅列している。
+          Worksの画像をクリックすると該当ページにとぶこともできる。
+          <br>作品のジャンルを「3DCG」「Animation」「Programming」「Others」と分けてそれぞれのページを作成し、上部メニューバー（またはハンバーガーメニュー）から遷移できるようにしている。
+          <br>視覚的なストレスがないようなサイトを制作することを心がけ、作品ごとにブロックで囲って見やすくしている。作品の画像、映像は「3DCG」「Others」のページでは横2列、「Animation」「Programming」では1列で揃えている。
+          またどのページでも横幅が狭いとき縦一列で整列されるようにし、できるだけ作品が画面に大きく表示されるよう工夫している。
+          <br>青字のリンクは新規タブで開くようにして元ページに戻る手間を省くことができるようにしている。
+          一方でジャンル間の移動は、新規タブで開くとかえって面倒になると考えたためそのまま遷移するようにしている。
+        </p>
+      </div>
+    </div>
+
+    <div id="">
+      <div class="example2">
+        <h3>Processing 作品集</h3>
+        <p>使用ツール:Processing <br>制作年 2024年</p>
+        <p>Processingとは: Javaをベースにした、電子アートやビジュアルデザインの作成に特化した、プログラミング言語。</p>
+
+        <p>- 島のようなもの生成乱数 -
+          <br>点の描写がランダムに動き回ることで、島の地図のようなものができるツール。ただプログラムを起動して待っていれば生成されるので操作は特にいらない。
+          <br>ランダムに点が動き回る性質上、全く同じものができることは決してない。出来上がったものを「ここの湾、いい形してるなー」など言って楽しむこともできる。
+        </p>
+        <p>作品URL:<a style="color: rgb(88, 166, 255);" href="processing_data/processing01.html"onclick="window.open('processing_data/processing01.html', '島のようなもの生成乱数','width=960,height=960,noopener'); return false;">
+          島のようなもの生成乱数</a><br>別ウィンドウで開きます
+        </p>
+        <div><img src="./img/simaransu.jpg" alt=""></div>
+
+
+        <p>- ドット絵ツール -
+          <br>マウスでカーソルを合わせてドラッグで黒色の描写ができて、何かキーを押すと白色の描写（消しゴム）ができるツール。20マス×20マスのドット絵を描くことができる。
+        </p>
+        <p>作品URL:<a style="color: rgb(88, 166, 255);" href="processing_data/processing01.html"onclick="window.open('processing_data/processing02.html', 'ドット絵ツール','width=500,height=500,noopener'); return false;">
+          ドット絵ツール</a><br>別ウィンドウで開きます
+        </p>
+        <div><img src="./img/dot.jpg" alt=""></div>
+
+
+        <p>- 鬼ごっこゲーム -
+          <br>赤鬼と青鬼から逃げるゲーム。勝利条件は特にない、ただ逃げるだけで面白みはないゲーム。赤鬼と青鬼の挙動がそれぞれ違うので注意。
+          <br>WASDで移動。PC推奨。
+        </p>
+        <p>作品URL:<a style="color: rgb(88, 166, 255);" href="processing_data/processing03.html"onclick="window.open('processing_data/processing03.html', '	鬼ごっこゲーム','width=1400,height=800,noopener'); return false;">
+          鬼ごっこゲーム</a><br>別ウィンドウで開きます
+        </p>
+        <div><img src="./img/onigokko.jpg" alt=""></div>
+        
+
+        <p>- 縦型STG -
+          <br>敵機に攻め入られないように10機を撃墜することが目的。クリア条件は10機撃破。ゲームオーバーは被弾もしくは画面下部に敵機が侵入すること。
+          <br>WASDで移動。space keyで自機弾発射（連射はできないので注意）。PC推奨。
+        </p>
+        <p>作品URL:<a style="color: rgb(88, 166, 255);" href="processing_data/processing04.html"onclick="window.open('processing_data/processing04.html', '縦型STG','width=600,height=800,noopener'); return false;">
+          縦型STG</a><br>別ウィンドウで開きます
+        </p>
+        <div><img src="./img/STG.jpg" alt=""></div>
+
+        
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div id="footer-main" style="max-width:1100px;margin:0 auto; padding:8px 16px;">
+      <div id="footer-title">Daiki Eguchi's<br>Portfolio</div>
+    </div>
+    <div id="footer-sub" style="text-align:center; padding:8px 0; font-size:12px;">Copyright © 2025 Daiki Eguchi. All Rights Reserved.</div>
+  </footer>
+</body>
+</html>

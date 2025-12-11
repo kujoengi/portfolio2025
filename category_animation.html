@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="category_mov_pro.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <!-- ロゴ(機能していないけどハンバーガーが安定するので放置) -->
+       <div id="logo"></div>
+
+       <!-- デスクトップ用ナビ -->
+        <nav id="desktop-nav" class="desktop-only" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category_3DCG.html">3DCG</a></li>
+            <li><a href="category_animation.html">Animation</a></li>
+            <li><a href="category_Programming.html">Programming</a></li>
+            <li><a href="category_others.html">Others</a></li>
+          </ul>
+        </nav>
+
+        <!-- モバイル用ハンバーガー -->
+         <div id="menubar-mobile" class="mobile-only" aria-hidden="false">
+          <div class="nav">
+            <!-- チェックボックス（視覚的には隠す） -->
+             <input id="drawer_input" class="drawer_hidden" type="checkbox" aria-controls="mobile-menu" aria-label="Toggle menu" />
+             <!-- ラベル（ハンバーガー） -->
+              <label for="drawer_input" class="drawer_open" aria-hidden="true"><span></span></label>
+
+              <!-- スライドメニュー本体 -->
+               <nav id="mobile-menu" class="nav_content" aria-label="Mobile navigation">
+                <ul class="nav_list">
+                  <li class="nav_item"><a href="index.html">Home</a></li>
+                  <li class="nav_item"><a href="category_3DCG.html">3DCG</a></li>
+                  <li class="nav_item"><a href="category_animation.html">Animation</a></li>
+                  <li class="nav_item"><a href="category_Programming.html">Programming</a></li>
+                  <li class="nav_item"><a href="category_others.html">Others</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+    <!-- ヘッダーテキスト（下段） -->
+    <div id="header-catch" style="text-align:center; padding: 12px 0; color: var(--primary-color);">
+      
+      <a href="index.html" target="_blank" rel="noopener noreferrer">
+        <h1 style="margin:0;">Daiki Eguchi's<br>Portfolio</h1>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <h2 style="text-align:center; margin-top:8px;">Animation Works</h2>
+
+    <div id="main-image">
+
+
+      <div id="">
+        <div class="example2">
+          <h3>Crane game アニメーション</h3>
+          <p>使用ツール：Autodesk Maya  Adobe PremierePro <br>制作年 2025年</p>
+          <p>3DCG作品「Crane Game」のアニメーション。
+            <br>プレイする台の選択→プレイ→獲得という流れ。クレーンやボタン、クマのぬいぐるみを動かしキーを打つことでクレーンゲームのプレイ映像にみせている。
+            クレーンが当たってぬいぐるみが倒れたように見せるために、クレーンに押しつぶされるようにやや沈ませるなどの工夫をしている。
+            <br>カメラを一人称視点で動かすことで臨場感、没入感を感じられるようにしている。
+            <br>作品詳細：<a style="color: rgb(88, 166, 255);" href="category_3DCG.html#cranegame" rel="noopener noreferrer">Crane game</a>
+          </p>
+          <iframe src="https://www.youtube.com/embed/zDk9bfF4cYI?si=nQ8MIjf68VR8LhbF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+
+      <div id="">
+        <div class="example2">
+          <h3>Gu-jing 発表映像</h3>
+          <p>使用ツール：Autodesk Maya  Adobe PremierePro  AfterEffects <br>制作年 2024年 2025年</p>
+          <p>ゼミ内発表会で用いた、Gu-jingの発表映像。
+            <br>Mayaで制作したGu-jingのモデルを、関東各地で撮影した風景映像に合成したもの。SNSに投稿された風に仕上げるため縦横等は統一していない。
+            <br>撮影地は主に私の生活圏、それと観光で行ってロケーションとして面白いと感じた場所となっている。
+            <br>Gu-jingを合成する時、映像ごとに光の強さと向きが違うため合わせた時に違和感がないようにするのにとても苦労した。
+            <a href="category_3DCG.html#gujing" target="Gujing" rel=""></a>
+            <br>作品詳細：<a style="color: rgb(88, 166, 255);" href="category_3DCG.html#gujing" rel="noopener noreferrer">Gu-jing グゥジン</a>
+          </p>
+          <iframe src="https://www.youtube.com/embed/k4XNN7OgxIA?si=cHuudUdh4eAz71bz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    
+      <div id="CM">
+        <div class="example2">
+          <h3>Charge SPOT CM企画</h3>
+          <p>使用ツール：Adobe PremierePro  AfterEffects  CLIP STUDIO <br>制作年 2024年</p>
+          <p>2024年度コマーシャル表現論で制作したCMの初期プロットビデオコンテ。
+            <br>実在の会社をクライアントとして、クライアントの求める訴求点を満たした架空のCMを制作するという課題設定の中で私は株式会社INFORICH様の「ChargeSPOT」を選び、CMのVコンを制作した。
+            <br>ChargeSPOTの魅力を30秒の尺で伝えるのには端的で伝わりやすい形での情報がいいと考えたため、寸劇の形式を用いた。
+          </p>
+          <p>ChargeSPOT URL:<a style="color: rgb(88, 166, 255);" href="https://chargespot.jp/" target="_blank" rel="noopener noreferrer">https://chargespot.jp/</a></p>
+          <p>※作品はあくまで架空の企画であり、INFORICH様およびCharges SPOTは関係がございません。</p>
+          <iframe src="https://www.youtube.com/embed/wlOeylnxLII?si=QKxOfwOb4oaokv30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div id="footer-main" style="max-width:1100px;margin:0 auto; padding:8px 16px;">
+      <div id="footer-title">Daiki Eguchi's<br>Portfolio</div>
+    </div>
+    <div id="footer-sub" style="text-align:center; padding:8px 0; font-size:12px;">Copyright © 2025 Daiki Eguchi. All Rights Reserved.</div>
+  </footer>
+</body>
+</html>

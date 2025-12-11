@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="category_all.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <!-- ロゴ(機能していないけどハンバーガーが安定するので放置) -->
+       <div id="logo"></div>
+
+       <!-- デスクトップ用ナビ -->
+        <nav id="desktop-nav" class="desktop-only" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category_3DCG.html">3DCG</a></li>
+            <li><a href="category_animation.html">Animation</a></li>
+            <li><a href="category_Programming.html">Programming</a></li>
+            <li><a href="category_others.html">Others</a></li>
+          </ul>
+        </nav>
+
+        <!-- モバイル用ハンバーガー -->
+         <div id="menubar-mobile" class="mobile-only" aria-hidden="false">
+          <div class="nav">
+            <!-- チェックボックス（視覚的には隠す） -->
+             <input id="drawer_input" class="drawer_hidden" type="checkbox" aria-controls="mobile-menu" aria-label="Toggle menu" />
+             <!-- ラベル（ハンバーガー） -->
+              <label for="drawer_input" class="drawer_open" aria-hidden="true"><span></span></label>
+
+              <!-- スライドメニュー本体 -->
+               <nav id="mobile-menu" class="nav_content" aria-label="Mobile navigation">
+                <ul class="nav_list">
+                  <li class="nav_item"><a href="index.html">Home</a></li>
+                  <li class="nav_item"><a href="category_3DCG.html">3DCG</a></li>
+                  <li class="nav_item"><a href="category_animation.html">Animation</a></li>
+                  <li class="nav_item"><a href="category_Programming.html">Programming</a></li>
+                  <li class="nav_item"><a href="category_others.html">Others</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+    <!-- ヘッダーテキスト（下段） -->
+    <div id="header-catch" style="text-align:center; padding: 12px 0; color: var(--primary-color);">
+      
+      <a href="index.html" target="_blank" rel="noopener noreferrer">
+        <h1 style="margin:0;">Daiki Eguchi's<br>Portfolio</h1>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <h2 style="text-align:center; margin-top:8px;">Other Works</h2>
+
+    <div id="main-image">
+
+      <div id="parade">
+        <div class="example2">
+          <p>2024年度 造形デザイン応用演習Ⅱ ステンドグラス作品</p>
+          
+          <!-- サムネイルたち -->
+           <div><img src="./img/glass1.jpg" alt="" class="thumb"></div>
+           <div><img src="./img/glass2.jpg" alt="" class="thumb"></div>
+          </div>
+        </div>
+
+
+      <div id="parade">
+        <div class="example2">
+          <p>2023年度 造形デザイン演習Ⅱ 造形作品</p>
+          
+          <div><img src="./img/parade1.jpg" alt="" class="thumb"></div>
+          <div><img src="./img/parade2.jpg" alt="" class="thumb"></div>
+        </div>
+      </div>
+
+
+       <div id="yanagisouri">
+        <div class="example2">
+          <p>2023年度 グラフィックデザイン演習Ⅰ 出版作品</p>
+          <div><img src="./img/yanagisouri1.jpg" alt="" class="thumb"></div>
+          <div><img src="./img/yanagisouri2.jpg" alt="" class="thumb"></div>
+          <div><img src="./img/yanagisouri3.jpg" alt="" class="thumb"></div>
+          <div><img src="./img/yanagisouri4.jpg" alt="" class="thumb"></div> 
+        </div>
+      </div>
+
+    <div id="drawing">
+      <div class="example2">
+        <p>2022年度 描写絵画演習 デッサン作品</p>
+        <div><img src="./img/kudamono.jpg" alt="" class="thumb"></div>
+        <div><img src="./img/kutu.jpg" alt="" class="thumb"></div>      
+      </div>
+    </div>
+
+    <div id="chuzou">
+      <div class="example2">
+        <p>2022年度 造形基礎演習 鋳造作品</p>
+        <div><img src="./img/chuzou1.jpg" alt="" class="thumb"></div>
+        <div><img src="./img/chuzou2.jpg" alt="" class="thumb"></div>
+        <div><img src="./img/chuzou3.jpg" alt="" class="thumb"></div>
+        <div><img src="./img/chuzou4.jpg" alt="" class="thumb"></div>
+      </div>
+    </div>
+
+    <!-- モーダル -->
+     <div id="modal">
+      <img id="modal-img" src="" alt="拡大画像">
+    </div>
+
+  </main>
+
+  <footer>
+    <div id="footer-main" style="max-width:1100px;margin:0 auto; padding:8px 16px;">
+      <div id="footer-title">Daiki Eguchi's<br>Portfolio</div>
+    </div>
+    <div id="footer-sub" style="text-align:center; padding:8px 0; font-size:12px;">Copyright © 2025 Daiki Eguchi. All Rights Reserved.</div>
+  </footer>
+  
+  <script>
+  // クリック可能な画像を取得
+  const thumbs = document.querySelectorAll(".thumb");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+
+  // 全てのサムネイルにクリックイベントを付与
+  thumbs.forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.style.display = "flex";
+    });
+  });
+
+  // モーダル領域をクリックしたら閉じる
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) { // 背景クリック時のみ閉じる
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>
