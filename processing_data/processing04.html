@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>縦型STG</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+let mx, my;
+
+let nokori = 10;
+
+let ex = 0; // 敵機X座標
+let ey = 0; // 敵機Y座標
+
+let exx = 0; // 固定砲台敵機X座標
+let eyy = 0; // 固定砲台敵機Y座標
+
+let bx = 0; // 自機弾幕X座標
+let by = 0; // 自機弾幕Y座標
+
+let ebx = 0; // 敵機弾幕X座標
+let eby = 0; // 敵機弾幕Y座標
+let eb2x = 0; // 敵機弾幕X座標2
+let eb2y = 0; // 敵機弾幕Y座標2
+let eb3x = 0; // 敵機弾幕X座標3
+let eb3y = 0; // 敵機弾幕Y座標3
+
+let exxx = 0; // 敵機弾幕X座標4
+let eyyy = 0; // 敵機弾幕Y座標4
+
+let img;  // GAMEOVER_s
+let img2; // GAMECLEAR
+let img3; // BACKGROUND
+
+function preload() {
+  img = loadImage("./img/GAMEOVER_s.png");
+  img2 = loadImage("./img/GAMECLEAR.png");
+  img3 = loadImage("./img/BACKGROUND.png");
+}
+
+function setup() {
+  createCanvas(600, 800);
+  frameRate(60);
+
+  mx = width / 2;
+  my = height * 3 / 4; // 自機初期座標
+
+  ex = random(30, 570); // 敵機X座標ランダム
+  ey = -15;
+
+  ebx = ex;
+  eby = ey + 15;
+
+  eb2x = ex;
+  eb2y = ey + 15;
+
+  eb3x = ex;
+  eb3y = ey + 15;
+
+  exx = ex;
+  eyy = ey + 15;
+
+  exxx = exx;
+  eyyy = eyy + 15;
+}
+
+function draw() {
+  image(img3, 0, 0, width, height);
+
+  fill(255, 255, 0);
+  textSize(50);
+  text(nokori, 30, 750);
+
+  // 自機
+  fill(150, 255, 255);
+  noStroke();
+  triangle(mx - 15, my + 15, mx + 15, my + 15, mx, my - 30);
+
+  // 敵機
+  ey += 1.5;
+  fill(255, 0, 0);
+  triangle(ex - 30, ey - 15, ex + 30, ey - 15, ex, ey + 15);
+
+  // 自機弾幕
+  by -= 7;
+  stroke(255);
+  fill(150, 255, 255);
+  ellipse(bx, by, 10, 10);
+
+  // 敵弾
+  eby += 3;
+  eb2x -= 0.2;
+  eb2y += 3;
+  eb3x += 0.2;
+  eb3y += 3;
+  eyyy += 5;
+
+  stroke(255);
+  fill(255, 0, 150);
+  ellipse(ebx, eby, 10, 10);
+  ellipse(eb2x, eb2y, 10, 10);
+  ellipse(eb3x, eb3y, 10, 10);
+  ellipse(exxx, eyyy, 10, 10);
+
+  // 固定砲台
+  noStroke();
+  fill(255, 0, 255);
+  triangle(exx - 15, eyy + 15, exx + 15, eyy + 15, exx, eyy + 30);
+  if (exx < mx) exx += 2;
+  if (exx > mx) exx -= 2;
+
+  if (eyyy > 800) {
+    exxx = exx;
+    eyyy = eyy + 15;
+  }
+  if (eby > 800) {
+    ebx = ex;
+    eby = ey + 15;
+  }
+  if (eb2y > 800) {
+    eb2x = ex;
+    eb2y = ey + 15;
+  }
+  if (eb3y > 800) {
+    eb3x = ex;
+    eb3y = ey + 15;
+  }
+
+  // 当たり判定（敵機）
+  if (bx > (ex - 25) && bx < ex + 25 && by > ey - 15 && by < ey + 15) {
+    ex = random(30, 570);
+    ey = -15;
+    bx = 0;
+    by = 0;
+
+    ebx = ex;
+    eby = ey;
+    eb2x = ex;
+    eb2y = ey;
+    eb3x = ex;
+    eb3y = ey;
+
+    nokori--;
+  }
+
+  // 当たり判定（固定砲台）
+  if (bx > (exx - 10) && bx < exx + 10 && by > eyy - 10 && by < eyy + 10) {
+    exx = -50;
+    eyy = 1000;
+    nokori--;
+  }
+
+  // ゲームオーバー判定（敵機・弾）
+  if ((ex > mx - 10 && ex < mx + 10 && ey > my - 10 && ey < my + 10) ||
+      (ebx > mx - 10 && ebx < mx + 10 && eby > my - 10 && eby < my + 10) ||
+      (eb2x > mx - 10 && eb2x < mx + 10 && eb2y > my - 10 && eb2y < my + 10) ||
+      (eb3x > mx - 10 && eb3x < mx + 10 && eb3y > my - 10 && eb3y < my + 10) ||
+      (exxx > mx - 10 && exxx < mx + 10 && eyyy > my - 10 && eyyy < my + 10) ||
+      (ey > 750)) {
+    image(img, 0, 0, width, height);
+    noLoop();
+  }
+
+  // ゲームクリア判定
+  if (nokori === 0) {
+    image(img2, 0, 0, width, height);
+    noLoop();
+  }
+}
+
+function keyPressed() {
+  switch (key) {
+    case 'a':
+      mx -= 20;
+      break;
+    case 'd':
+      mx += 20;
+      break;
+    case 'w':
+      my -= 20;
+      break;
+    case 's':
+      my += 20;
+      break;
+  }
+
+  if (key === ' ') { // 自機弾幕
+    if (by < 0) {
+      bx = mx;
+      by = my - 30;
+    }
+  }
+}
+</script>
+</body>
+</html>

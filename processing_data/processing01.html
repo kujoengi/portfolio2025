@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>島っぽいもの生成乱数</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+let speed = 3;
+let diameter = 1;
+let x;
+let y;
+
+function setup() {
+  createCanvas(960, 960);
+  x = width / 2;
+  y = height / 2;
+  background(255);
+}
+
+function draw() {
+  x += random(-speed, speed);
+  y += random(-speed, speed);
+  x = constrain(x, 0, width);
+  y = constrain(y, 0, height);
+  ellipse(x, y, diameter, diameter);
+}
+</script>
+</body>
+</html>

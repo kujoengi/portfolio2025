@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+  let Length = 20;
+let BlockSize;
+let Map = [];
+
+function setup() {
+  createCanvas(500, 500);
+  colorMode(HSB, 100);
+  background(88);
+
+  BlockSize = width / Length;
+
+  // 配列初期化
+  for (let y = 0; y < Length; y++) {
+    Map[y] = [];
+    for (let x = 0; x < Length; x++) {
+      Map[y][x] = 10;
+    }
+  }
+}
+
+function draw() {
+  for (let y = 0; y < Length; y++) {
+    for (let x = 0; x < Length; x++) {
+      noStroke();
+      fill(Map[y][x] * 100); // 
+      rect(x * BlockSize, y * BlockSize, BlockSize, BlockSize);
+    }
+  }
+}
+
+function mouseDragged() {
+  let x = int(mouseX / BlockSize);
+  let y = int(mouseY / BlockSize);
+
+  if (x >= 0 && x < Length && y >= 0 && y < Length) {
+    if (Map[y][x] > 0) {
+      Map[y][x]--;
+    }
+  }
+}
+
+function keyPressed() {
+  let x = int(mouseX / BlockSize);
+  let y = int(mouseY / BlockSize);
+
+  if (x >= 0 && x < Length && y >= 0 && y < Length) {
+    if (Map[y][x] < 10) {
+      Map[y][x]++;
+    }
+  }
+}
+
+
+</script>
+</body>
+</html>

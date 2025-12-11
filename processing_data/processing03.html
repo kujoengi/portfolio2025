@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>鬼ごっこゲーム</title>
+  <!-- p5.js の読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+let chip_size;
+let my_x, my_y;
+let enemy_x, enemy_y;
+let enemy_x2, enemy_y2;
+let rate;
+let img; // 画像データ
+
+function preload() {
+  img = loadImage('./img/GAMEOVER.png'); // 同じフォルダに置く
+}
+
+function setup() {
+  createCanvas(1400, 800);
+  my_x = 700;
+  my_y = 300;
+  enemy_x = 0;
+  enemy_y = 800;
+  enemy_x2 = 1400;
+  enemy_y2 = 800;
+  rate = 0;
+}
+
+function draw() {
+  background(0);
+  fill(255);
+  ellipse(my_x, my_y, 30, 30);
+
+  if (rate >= 5) { // 青
+    if (enemy_x2 < my_x) enemy_x2 += 5;
+    if (enemy_x2 > my_x) enemy_x2 -= 5;
+    if (enemy_y2 < my_y) enemy_y2 += 5;
+    if (enemy_y2 > my_y) enemy_y2 -= 5;
+
+    if (enemy_x2 - 15 < my_x && enemy_x2 + 15 > my_x &&
+        enemy_y2 - 15 < my_y && enemy_y2 + 15 > my_y) {
+      image(img, 0, 0, width, height);
+      noLoop();
+    }
+  }
+
+  if (rate >= 7) {
+    if (enemy_x < my_x) enemy_x += 15;
+    if (enemy_x > my_x) enemy_x -= 15;
+    if (enemy_y < my_y) enemy_y += 10;
+    if (enemy_y > my_y) enemy_y -= 10;
+    rate = 0;
+  }
+
+  if (enemy_x - 15 < my_x && enemy_x + 15 > my_x &&
+      enemy_y - 15 < my_y && enemy_y + 15 > my_y) {
+    image(img, 0, 0, width, height);
+    noLoop();
+  }
+
+  // 赤鬼
+  fill(255);
+  triangle(enemy_x - 15, enemy_y, enemy_x + 15, enemy_y, enemy_x, enemy_y - 30);
+  fill(220, 0, 0);
+  ellipse(enemy_x, enemy_y, 40, 40);
+
+  // 青鬼
+  fill(255);
+  triangle(enemy_x2, enemy_y2, enemy_x2 + 15, enemy_y2, enemy_x2 + 8, enemy_y2 - 30);
+  triangle(enemy_x2, enemy_y2, enemy_x2 - 15, enemy_y2, enemy_x2 - 8, enemy_y2 - 30);
+  fill(0, 0, 220);
+  ellipse(enemy_x2, enemy_y2, 40, 40);
+
+  rate++;
+}
+
+function keyPressed() {
+  switch (key) {
+    case 'a':
+      my_x -= 30;
+      break;
+    case 'd':
+      my_x += 30;
+      break;
+    case 'w':
+      my_y -= 30;
+      break;
+    case 's':
+      my_y += 30;
+      break;
+  }
+}
+</script>
+</body>
+</html>
