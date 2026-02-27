@@ -197,7 +197,7 @@ main {
   text-align: center;
   color:var(--primary-color);
   width: auto;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .example2 h3 {
@@ -263,7 +263,7 @@ iframe{
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
-  max-width: 1300px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
